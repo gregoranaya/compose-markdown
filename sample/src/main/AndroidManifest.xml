@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeMarkdown">
         <activity
-            android:name="dev.jeziellago.compose.markdown.MainActivity"
+            android:name="com.bcp.com.markdown.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

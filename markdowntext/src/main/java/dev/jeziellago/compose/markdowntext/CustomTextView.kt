@@ -1,4 +1,4 @@
-package dev.jeziellago.compose.markdowntext
+package com.bcp.com.markdown
 
 import android.content.Context
 import android.text.Spannable
@@ -6,7 +6,7 @@ import android.text.style.ClickableSpan
 import android.view.MotionEvent
 import androidx.appcompat.widget.AppCompatTextView
 
-class CustomTextView(context: Context) : AppCompatTextView(context) {
+class BCPCustomTextView(context: Context) : AppCompatTextView(context) {
 
     private var isTextSelectable: Boolean = false
 

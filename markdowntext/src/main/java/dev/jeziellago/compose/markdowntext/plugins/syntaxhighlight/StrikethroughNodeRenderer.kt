@@ -1,4 +1,4 @@
-package dev.jeziellago.compose.markdowntext.plugins.syntaxhighlight;
+package com.bcp.com.markdown.plugins.syntaxhighlight;
 
 import org.commonmark.node.Node
 import org.commonmark.renderer.NodeRenderer
@@ -6,14 +6,14 @@ import org.commonmark.renderer.text.TextContentNodeRendererContext
 import org.commonmark.renderer.text.TextContentWriter
 import java.util.Collections
 
-abstract class SyntaxHighlightRenderer : NodeRenderer {
+abstract class BCPSyntaxHighlightRenderer : NodeRenderer {
     override fun getNodeTypes(): MutableSet<Class<out Node>> {
-        return Collections.singleton(SyntaxHighlight::class.java)
+        return Collections.singleton(BCPSyntaxHighlight::class.java)
     }
 }
 
-class SyntaxHighlightNodeRenderer(private val context: TextContentNodeRendererContext) :
-    SyntaxHighlightRenderer() {
+class BCPSyntaxHighlightNodeRenderer(private val context: TextContentNodeRendererContext) :
+    BCPSyntaxHighlightRenderer() {
     private val textContent: TextContentWriter = context.writer
 
     override fun render(node: Node) {
