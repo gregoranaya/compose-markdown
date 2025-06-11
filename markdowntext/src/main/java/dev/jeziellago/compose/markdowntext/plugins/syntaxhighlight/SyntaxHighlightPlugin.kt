@@ -1,4 +1,4 @@
-package dev.jeziellago.compose.markdowntext.plugins.syntaxhighlight
+package com.bcp.com.markdown.plugins.syntaxhighlight
 
 import io.noties.markwon.AbstractMarkwonPlugin
 import io.noties.markwon.MarkwonSpansFactory
@@ -6,22 +6,22 @@ import io.noties.markwon.MarkwonVisitor
 import io.noties.markwon.core.factory.CodeSpanFactory
 import org.commonmark.parser.Parser
 
-class SyntaxHighlightPlugin : AbstractMarkwonPlugin() {
+class BCPSyntaxHighlightPlugin : AbstractMarkwonPlugin() {
 
     override fun configureParser(builder: Parser.Builder) {
-        builder.extensions(setOf(SyntaxHighlightExtension.create()))
+        builder.extensions(setOf(BCPSyntaxHighlightExtension.create()))
     }
 
     override fun configureSpansFactory(builder: MarkwonSpansFactory.Builder) {
         builder.setFactory(
-            SyntaxHighlight::class.java,
+            BCPSyntaxHighlight::class.java,
             CodeSpanFactory()
         )
     }
 
     override fun configureVisitor(builder: MarkwonVisitor.Builder) {
         builder.on(
-            SyntaxHighlight::class.java
+            BCPSyntaxHighlight::class.java
         ) { visitor, syntaxHighlight ->
             val length = visitor.length()
             visitor.builder().append('\u00a0')

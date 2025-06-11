@@ -1,11 +1,11 @@
-package dev.jeziellago.compose.markdowntext
+package com.bcp.com.markdown
 
 import android.util.TypedValue
 
 /**
  * Requires API Level 26 to apply auto size
  * */
-data class AutoSizeConfig(
+data class BCPAutoSizeConfig(
     val autoSizeMinTextSize: Int,
     val autoSizeMaxTextSize: Int,
     val autoSizeStepGranularity: Int,

@@ -1,4 +1,4 @@
-package dev.jeziellago.compose.markdowntext.plugins.core
+package com.bcp.com.markdown.plugins.core
 
 import androidx.annotation.VisibleForTesting
 import androidx.compose.ui.graphics.Color
@@ -39,7 +39,7 @@ import org.commonmark.node.StrongEmphasis
 import org.commonmark.node.Text
 import org.commonmark.node.ThematicBreak
 
-class MardownCorePlugin(
+class BCPMardownCorePlugin(
     private val syntaxHighlightColor: Int,
     private val syntaxHighlightTextColor: Int,
     private val enableUnderlineForLink: Boolean,

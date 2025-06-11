@@ -1,11 +1,11 @@
-package dev.jeziellago.compose.markdowntext.plugins.syntaxhighlight
+package com.bcp.com.markdown.plugins.syntaxhighlight
 
 import org.commonmark.node.Node
 import org.commonmark.node.Text
 import org.commonmark.parser.delimiter.DelimiterProcessor
 import org.commonmark.parser.delimiter.DelimiterRun
 
-class SyntaxHighlightDelimiterProcessor(
+class BCPSyntaxHighlightDelimiterProcessor(
     private val openingCharacter: Char,
     private val closingCharacter: Char,
     private val minLength: Int,
@@ -27,8 +27,8 @@ class SyntaxHighlightDelimiterProcessor(
     }
 
     override fun process(opener: Text, closer: Text, delimiterCount: Int) {
-        // Wrap nodes between delimiters in SyntaxHighlight.
-        val syntaxHighlight: Node = SyntaxHighlight(opener.literal)
+        // Wrap nodes between delimiters in BCPSyntaxHighlight.
+        val syntaxHighlight: Node = BCPSyntaxHighlight(opener.literal)
 
         var tmp = opener.next
         while (tmp != null && tmp !== closer) {

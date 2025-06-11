@@ -1,4 +1,4 @@
-package dev.jeziellago.compose.markdowntext
+package com.bcp.com.markdown
 
 import android.content.Context
 import android.os.Build.VERSION.SDK_INT
@@ -10,9 +10,9 @@ import androidx.compose.ui.text.TextStyle
 import coil.ImageLoader
 import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
-import dev.jeziellago.compose.markdowntext.plugins.core.MardownCorePlugin
-import dev.jeziellago.compose.markdowntext.plugins.image.ImagesPlugin
-import dev.jeziellago.compose.markdowntext.plugins.syntaxhighlight.SyntaxHighlightPlugin
+import com.bcp.com.markdown.plugins.core.BCPMardownCorePlugin
+import com.bcp.com.markdown.plugins.image.BCPImagesPlugin
+import com.bcp.com.markdown.plugins.syntaxhighlight.BCPSyntaxHighlightPlugin
 import io.noties.markwon.AbstractMarkwonPlugin
 import io.noties.markwon.Markwon
 import io.noties.markwon.MarkwonConfiguration
@@ -24,7 +24,7 @@ import io.noties.markwon.ext.tasklist.TaskListPlugin
 import io.noties.markwon.html.HtmlPlugin
 import io.noties.markwon.linkify.LinkifyPlugin
 
-internal object MarkdownRender {
+internal object BCPMarkdownRender {
 
     fun create(
         context: Context,
@@ -52,14 +52,14 @@ internal object MarkdownRender {
 
         return Markwon.builderNoCore(context)
             .usePlugin(
-                MardownCorePlugin(
+                BCPMardownCorePlugin(
                     syntaxHighlightColor.toArgb(),
                     syntaxHighlightTextColor.toArgb(),
                     enableUnderlineForLink,
                 )
             )
             .usePlugin(HtmlPlugin.create())
-            .usePlugin(ImagesPlugin.create(context, coilImageLoader))
+            .usePlugin(BCPImagesPlugin.create(context, coilImageLoader))
             .usePlugin(StrikethroughPlugin.create())
             .usePlugin(TablePlugin.create(context))
             .usePlugin(LinkifyPlugin.create(linkifyMask))
@@ -69,7 +69,7 @@ internal object MarkdownRender {
                     usePlugin(SoftBreakAddsNewLinePlugin.create())
                 }
             }
-            .usePlugin(SyntaxHighlightPlugin())
+            .usePlugin(BCPSyntaxHighlightPlugin())
             .usePlugin(object : AbstractMarkwonPlugin() {
 
                 override fun beforeSetText(textView: TextView, markdown: Spanned) {

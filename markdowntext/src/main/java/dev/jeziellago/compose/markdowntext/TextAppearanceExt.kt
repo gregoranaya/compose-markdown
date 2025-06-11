@@ -1,4 +1,4 @@
-package dev.jeziellago.compose.markdowntext
+package com.bcp.com.markdown
 
 import android.graphics.Paint
 import android.graphics.Typeface

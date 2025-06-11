@@ -1,4 +1,4 @@
-package dev.jeziellago.compose.markdowntext.plugins.image
+package com.bcp.com.markdown.plugins.image
 
 import android.content.Context
 import android.graphics.drawable.Animatable
@@ -19,7 +19,7 @@ import io.noties.markwon.image.DrawableUtils
 import io.noties.markwon.image.ImageSpanFactory
 import java.util.concurrent.atomic.AtomicBoolean
 
-class ImagesPlugin private constructor(
+class BCPImagesPlugin private constructor(
     private val imageLoader: ImageLoader,
     private val coilStore: CoilStore,
     private val imageDrawableLoader: AnimatedImageDrawableLoader = AnimatedImageDrawableLoader(
@@ -47,7 +47,7 @@ class ImagesPlugin private constructor(
     companion object {
         private val cache: HashMap<AsyncDrawable, Disposable> = HashMap(2)
 
-        fun create(context: Context, imageLoader: ImageLoader): ImagesPlugin {
+        fun create(context: Context, imageLoader: ImageLoader): BCPImagesPlugin {
             val coilStore = object : CoilStore {
                 override fun load(drawable: AsyncDrawable): ImageRequest {
                     return ImageRequest.Builder(context)
@@ -59,7 +59,7 @@ class ImagesPlugin private constructor(
                     disposable.dispose()
                 }
             }
-            return ImagesPlugin(imageLoader, coilStore)
+            return BCPImagesPlugin(imageLoader, coilStore)
         }
 
         class AnimatedImageDrawableLoader(
