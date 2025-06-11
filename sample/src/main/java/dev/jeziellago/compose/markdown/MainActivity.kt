@@ -1,4 +1,4 @@
-package dev.jeziellago.compose.markdown
+package com.bcp.com.markdown
 
 import android.os.Bundle
 import android.widget.Toast
@@ -17,8 +17,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.jeziellago.compose.markdown.sample.R
-import dev.jeziellago.compose.markdowntext.MarkdownText
+import com.bcp.com.markdown.sample.R
+import com.bcp.com.markdown.BCPMarkdownText
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
                 .fillMaxWidth(),
         ) {
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxWidth(),
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                         ## Checks
                         - [x] Review #123
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     syntaxHighlightColor = Color.Black,
                     syntaxHighlightTextColor = Color.White,
                     markdown = """
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                         <h2>Head with heading break color blue</h2>
                         
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             ## Custom font
 
@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     modifier = Modifier.clickable {
                         Toast
                             .makeText(this@MainActivity, "On text click", Toast.LENGTH_SHORT)
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                         ## Selectable item
                        
@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             ## Justify
 
@@ -147,7 +147,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             ## Color
                             
@@ -160,7 +160,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                            ---
                             __Advertisement :)__
@@ -183,7 +183,7 @@ class MainActivity : AppCompatActivity() {
                     })
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             # h1 Heading 8-)
                             ## h2 Heading
@@ -196,7 +196,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             ## Horizontal Rules
 
@@ -210,7 +210,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             ## Emphasis
 
@@ -228,7 +228,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             ## Links
 
@@ -242,7 +242,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     modifier = Modifier.fillMaxWidth(),
                     markdown = """
                             ## Images
@@ -254,7 +254,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     modifier = Modifier.fillMaxWidth(),
                     markdown = """
                             Content
@@ -266,7 +266,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     modifier = Modifier.fillMaxWidth(),
                     markdown = """
                             ## Tables
@@ -289,7 +289,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             ## Lists
 
@@ -322,7 +322,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             ## Blockquotes
 
@@ -334,7 +334,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = """
                             ## Code
 
@@ -367,7 +367,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
             item {
-                MarkdownText(
+                BCPMarkdownText(
                     markdown = "\n# HTML SECTION ${
                         String(
                             resources.openRawResource(R.raw.html).readBytes()

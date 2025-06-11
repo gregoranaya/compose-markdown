@@ -6,10 +6,10 @@ plugins {
 android {
     compileSdkVersion 34
     buildToolsVersion "34.0.0"
-    namespace 'dev.jeziellago.compose.markdown.sample'
+    namespace 'com.bcp.com.markdown.sample'
 
     defaultConfig {
-        applicationId "dev.jeziellago.compose.markdown"
+        applicationId "com.bcp.com.markdown"
         minSdkVersion 21
         targetSdkVersion 34
         versionCode 1

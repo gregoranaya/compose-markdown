@@ -1,4 +1,4 @@
-package dev.jeziellago.compose.markdowntext
+package com.bcp.com.markdown
 
 import android.content.Context
 import android.os.Build
@@ -26,14 +26,14 @@ import coil.ImageLoader
 import io.noties.markwon.Markwon
 
 @Composable
-fun MarkdownText(
+fun BCPMarkdownText(
     markdown: String,
     modifier: Modifier = Modifier,
     linkColor: Color = Color.Unspecified,
     truncateOnTextOverflow: Boolean = false,
     maxLines: Int = Int.MAX_VALUE,
     isTextSelectable: Boolean = false,
-    autoSizeConfig: AutoSizeConfig? = null,
+    autoSizeConfig: BCPAutoSizeConfig? = null,
     @FontRes fontResource: Int? = null,
     style: TextStyle = LocalTextStyle.current,
     @IdRes viewId: Int? = null,
@@ -58,7 +58,7 @@ fun MarkdownText(
     val context: Context = LocalContext.current
     val markdownRender: Markwon =
         remember {
-            MarkdownRender.create(
+            BCPMarkdownRender.create(
                 context,
                 imageLoader,
                 linkifyMask,
@@ -87,7 +87,7 @@ fun MarkdownText(
 
             val linkTextColor = linkColor.takeOrElse { style.color.takeOrElse { defaultColor } }
 
-            CustomTextView(factoryContext).apply {
+            BCPCustomTextView(factoryContext).apply {
                 viewId?.let { id = viewId }
                 fontResource?.let { font -> applyFontResource(font) }
                 importantForAccessibility = importForAccessibility
